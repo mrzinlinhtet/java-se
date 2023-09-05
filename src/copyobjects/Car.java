@@ -1,4 +1,4 @@
-package encapsulation;
+package copyobjects;
 
 public class Car {
 
@@ -10,6 +10,9 @@ public class Car {
         this.setMake(make);
         this.setModel(model);
         this.setYear(year);
+    }
+    Car(Car x) {
+        this.copy(x);
     }
 
     public String getMake() {
@@ -32,4 +35,9 @@ public class Car {
         return this.year = year;
     }
 
+    public void copy(Car x) {
+        this.setMake(x.getMake());
+        this.setModel(x.getModel());
+        this.setYear(x.getYear());
+    }
 }
